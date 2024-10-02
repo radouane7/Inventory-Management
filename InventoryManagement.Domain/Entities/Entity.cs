@@ -11,7 +11,7 @@ namespace InventoryManagement.Domain.Entities
     {
         [Key]
         public int Id { get; protected set; }
-        public Entity(int id)
+        public Entity(int id =0)
         {
             Id = id;
         }

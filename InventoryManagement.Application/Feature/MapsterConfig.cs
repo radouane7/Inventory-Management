@@ -19,7 +19,7 @@ namespace InventoryManagement.Application.Feature
             // Configure the mapping between AddOrderDto and Order
             TypeAdapterConfig<CategoryDto, Domain.Entities.Category>
                 .NewConfig()
-                .ConstructUsing(src => new Domain.Entities.Category(src.Id)) // Specify how to construct the Category
+                .ConstructUsing(src => new Domain.Entities.Category()) // Specify how to construct the Category
                 .Map(dest => dest.Id, src => src.Id)
                 .Map(dest => dest.CategoryName, src => src.CategoryName);
 

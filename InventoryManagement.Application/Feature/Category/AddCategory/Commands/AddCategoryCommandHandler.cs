@@ -27,7 +27,8 @@ namespace InventoryManagement.Application.Feature.Category.AddCategory.Commands
             InventoryManagement.Domain.Entities.Category category = 
                 request.CategoryDto.Adapt<InventoryManagement.Domain.Entities.Category>();
             _categoryRepo.AddCategory(category);
-            _unitOfWork.commit();   
+            _unitOfWork.commit();
+            
             return Task.FromResult(1);
         }
     }

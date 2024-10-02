@@ -23,12 +23,12 @@ namespace InventoryManagement.API.Controllers
         [HttpPost]
         public IActionResult AddCategory(CategoryDto _categoryDto)
         { 
-          //  AddCategoryCommand addCategoryCommand = new AddCategoryCommand { CategoryDto = _categoryDto }; 
-            AddCategoryNotification addCategoryNotification = new AddCategoryNotification { CategoryDto = _categoryDto };   
-           // var res = _send.Send(addCategoryCommand);   
-           _mediator.Publish(addCategoryNotification);
-            // return Ok(res);
-            return Ok();
+          AddCategoryCommand addCategoryCommand = new AddCategoryCommand { CategoryDto = _categoryDto }; 
+            //  AddCategoryNotification addCategoryNotification = new AddCategoryNotification { CategoryDto = _categoryDto };   
+           var res = _send.Send(addCategoryCommand);   
+           // _mediator.Publish(addCategoryNotification);
+            return Ok(res);
+            // return Ok();
         }
     }
 }

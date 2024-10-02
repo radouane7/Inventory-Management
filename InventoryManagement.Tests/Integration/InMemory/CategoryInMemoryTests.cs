@@ -9,26 +9,26 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace InventoryManagement.Tests
+namespace InventoryManagement.Tests.Integration.InMemory
 {
     public class CategoryTest : IClassFixture<SharedDatabaseFixture>
     {
-         private readonly InventoryDBContext _context;
+        private readonly InventoryDBContext _context;
         private readonly CategoryRepo _repo;
 
 
         public CategoryTest(SharedDatabaseFixture fixture)
-        { 
+        {
             _context = new InventoryDBContext(fixture.ContextOptions);
 
-            _repo = new CategoryRepo(_context); 
+            _repo = new CategoryRepo(_context);
         }
 
         [Fact]
         public void AddCategory_ShouldAddCategoryToDbSet()
         {
             // Arrange
-            var category = new Category (2) {  CategoryName = "Books" };
+            var category = new Category() { CategoryName = "Books" };
 
             // Act
             _repo.AddCategory(category);

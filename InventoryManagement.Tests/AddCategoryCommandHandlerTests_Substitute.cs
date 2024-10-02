@@ -13,13 +13,13 @@ using System.Threading.Tasks;
 
 namespace InventoryManagement.Tests
 {
-    public class AddCategoryCommandHandlerTests
+    public class AddCategoryCommandHandlerTests_Substitute
     {
         private readonly ICategoryRepo _categoryRepo;
         private readonly IUnitOfWork _unitOfWork;
         private readonly AddCategoryCommandHandler _handler;
 
-        public AddCategoryCommandHandlerTests()
+        public AddCategoryCommandHandlerTests_Substitute()
         {
             // Initialize Mapster configuration
              new MapsterConfig();
